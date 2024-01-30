@@ -13,9 +13,14 @@ class FormularioController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'flexRadioDefault1' => 'required',
-        ]);
+
+        $rules = []; 
+
+        for($i = 1; $i <= 60 ; $i++) {
+            $rules["flexRadioDefault$i"] = 'required';
+        }
+
+        $request->validate($rules);
 
         echo 'Formulario enviado com sucesso!';
     }
