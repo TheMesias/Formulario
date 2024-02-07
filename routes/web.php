@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormularioController;
+use App\Http\Controllers\profesionUsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,5 @@ Route::get('/', function () {
 
 Route::get('formulario', [FormularioController::class, 'index']);
 Route::post('formulario/store', [FormularioController::class, 'store'])->name('store');
+
+Route::get('profesionUsuario', [profesionUsuarioController::class, 'index'])->name('profesionUsuario');

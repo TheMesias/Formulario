@@ -8,19 +8,16 @@ use Illuminate\View\Component;
 
 class pregunta extends Component
 {
-    /**
-     * Create a new component instance.
-     */
 
-    public $questionNumber; 
-    public $questionText;
-    public $name; 
+    public $codigo_pregunta; 
+    public $titulo_pregunta;
+ 
 
-    public function __construct($questionNumber, $questionText, $name)
+    public function __construct($codigo_pregunta, $titulo_pregunta)
     {
-        $this->questionNumber = $questionNumber;
-        $this->questionText = $questionText;
-        $this->name = $name;
+        $this->codigo_pregunta = $codigo_pregunta;
+        $this->titulo_pregunta = $titulo_pregunta;
+
     }   
     
 

@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('respuestas', function (Blueprint $table) {
             $table->id();
             $table->string('codigo_respuesta');
-            $table->unsignedBigInteger('usuario_id');
+            //$table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('pregunta_id');
             $table->unsignedBigInteger('tipo_respuesta_id');
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('celular'); 
+            $table->timestamps(); 
 
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            //$table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->foreign('pregunta_id')->references('id')->on('preguntas');
             $table->foreign('tipo_respuesta_id')->references('id')->on('tipo_respuestas');
         });

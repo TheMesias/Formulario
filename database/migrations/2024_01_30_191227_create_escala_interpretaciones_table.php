@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('escala_interpretaciones', function (Blueprint $table) {
             $table->id();
             $table->string('codigo_escala_interpretacion');
-            
             $table->unsignedBigInteger('catalgo_id');
             $table->text('titulo_escala_interpretacion');
             $table->enum('descripcion_escala_interpretacion',['Baja','Media','Alta']);
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->unsignedSmallInteger('valor_interpretacion');
             $table->boolean('activo_escala_interpretacion');
             $table->timestamps();
-
             $table->foreign('catalgo_id')->references('id')->on('catalogos');
         });
     }

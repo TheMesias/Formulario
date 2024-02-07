@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class EscalaInterpretacion extends Model
 {
     use HasFactory;
+    protected $table = 'escala_interpretaciones';
 }

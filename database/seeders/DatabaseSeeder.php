@@ -3,6 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Catalogo;
+use App\Models\tipo_estandar_encuestas;
+use App\Models\TipoEstandarEncuesta;
+use App\Models\Usuario;
+use Database\Factories\factory_tipo_estandar_encuestasFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +18,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+       //TipoEstandarEncuesta::factory()->count(10)->create();
+       //Usuario::factory()->count(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+       $this->call([
+        TipoEstandarEncuestaSeeder::class,
+        CatalogoSeeder::class,
+        EscalaInterpretacionesSeeder::class,
+        PreguntasSeeder::class,
+        TipoRespuestaSeeder::class,
+       ]);
+
+  
+        
     }
 }
